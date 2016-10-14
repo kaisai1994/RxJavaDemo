@@ -11,6 +11,7 @@ import java.util.List;
 
 import rx.Observable;
 import rx.Subscriber;
+import rx.Subscription;
 import rx.functions.Func1;
 
 
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        Observable.just("Hello world")
+        Subscription sub = Observable.just("Hello world")
                 .map(new Func1<String, String>() {
                     @Override
                     public String call(String s) {
@@ -155,6 +156,11 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, "next: "+s);
             }
         });
+
+        sub.unsubscribe();
+        System.out.println(""+sub.isUnsubscribed());
+
+
 
 
     }
