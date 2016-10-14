@@ -160,9 +160,6 @@ public class MainActivity extends AppCompatActivity {
         sub.unsubscribe();
         System.out.println(""+sub.isUnsubscribed());
 
-
-
-
     }
 
     public Observable<List<String>> query(String str) {
